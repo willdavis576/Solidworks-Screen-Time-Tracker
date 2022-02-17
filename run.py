@@ -4,6 +4,7 @@ import time
 run = False
 track = False
 timeDiff = 0
+startTime = time.time()
 
 with open('sessionTime.txt') as f:
     timeDiff = eval(f.readlines()[0])
@@ -33,6 +34,11 @@ while run:
             track = False
             
         print(timeDiff)
+        
+        if round(time.time() - startTime) % 5 == 0:
+            f = open('sessionTime.txt','w')
+            f.write(str(timeDiff))
+            f.close()
     
     except KeyboardInterrupt:
         print("stopping")
