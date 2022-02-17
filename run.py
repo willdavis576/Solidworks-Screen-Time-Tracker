@@ -9,10 +9,13 @@ with open('sessionTime.txt') as f:
     timeDiff = eval(f.readlines()[0])
     f.close()
 
-sessionStart = input("start session? ")
+sessionStart = input("start session? (y/n) ")
 
 if sessionStart == "y" or sessionStart == "Y":
     run = True
+    
+if sessionStart == "n" or sessionStart == "N":
+    run = False
 
 while run:
     try:
