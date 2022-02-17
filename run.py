@@ -35,7 +35,7 @@ while run:
             
         print(timeDiff)
         
-        if round(time.time() - startTime) % 5 == 0:
+        if round(time.time() - startTime) % 60 == 0:
             f = open('sessionTime.txt','w')
             f.write(str(timeDiff))
             f.close()
